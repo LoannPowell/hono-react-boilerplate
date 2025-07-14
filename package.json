@@ -1,0 +1,21 @@
+{
+  "name": "optioo",
+  "scripts": {
+    "start": "bun server/index.ts",
+    "dev": "bun run --hot src/server/index.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^1.3.22",
+    "@hono/zod-validator": "^0.7.0",
+    "ai": "^4.3.16",
+    "better-auth": "^1.2.12",
+    "drizzle-orm": "^0.44.2",
+    "hono": "^4.8.3",
+    "pg": "^8.16.3",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.17",
+    "drizzle-kit": "^0.31.4"
+  }
+}
