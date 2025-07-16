@@ -8,6 +8,7 @@ import { serveStatic } from 'hono/bun';
 const app = new Hono();
 
 app.use('*', logger())
+
 const apiRoutes = app.basePath('/api')
       .route('/health',healthRoutes)
       .route('/ai', aiRoutes)

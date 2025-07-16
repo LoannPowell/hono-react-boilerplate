@@ -1,6 +1,8 @@
 import { Hono } from "hono";
-import { auth } from "../../../lib/auth";
+import { auth, AuthType } from "../../lib/auth";
  
-export const authRoutes = new Hono()
- .on(["POST", "GET"], "/**", (c) => auth.handler(c.req.raw));
+export const authRoutes = new Hono<{ Bindings: AuthType }>({
+    strict: false,
+})
+.on(["POST", "GET"], "/**", (c) => auth.handler(c.req.raw));
  
