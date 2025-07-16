@@ -1,4 +1,12 @@
+import type { AuthType } from "./lib/auth";
 import app from "./app";
+
+declare module "hono" {
+  interface ContextVariableMap {
+    user?: AuthType["user"];
+    session?: AuthType["session"];
+  }
+}
 
 const server = Bun.serve({
   fetch: app.fetch,

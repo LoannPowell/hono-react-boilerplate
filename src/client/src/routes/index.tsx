@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import Login from '../components/Login'
-import Register from '../components/Register'
+import Login from '../components/login'
+import Register from '../components/register'
 import { signIn, signUp, useSession } from '../lib/auth-client'
 
 export const Route = createFileRoute('/')({
@@ -10,8 +10,6 @@ export const Route = createFileRoute('/')({
 
 
 function Index() {
-  const { data: session } = useSession();
-  console.log(session);
   return (
     <div className="flex flex-col gap-12 justify-center items-center h-screen w-screen">
       <Login onLogin={signIn} />
