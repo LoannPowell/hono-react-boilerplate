@@ -6,7 +6,7 @@ COPY . .
 
 RUN bun install
 
-WORKDIR /src/frontend
+WORKDIR /src/client
 RUN bun install && bun run build
 
 WORKDIR /
