@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Login from '../components/login'
 import Register from '../components/register'
-import { signIn, signUp, useSession } from '../lib/auth-client'
+import { signIn, signUp  } from '../lib/auth-client'
 
 export const Route = createFileRoute('/')({
   component: Index,
