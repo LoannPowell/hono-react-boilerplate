@@ -19,19 +19,23 @@ export const auth =  betterAuth({
         enabled: true,
         requireEmailVerification: true,
         sendResetPassword: async ({user, url, token}) => {
+            console.log('URL:', url);
+            if (token) console.log('Token:', token);
+            console.log('user', user.email);
+
             const html = generateEmailHTML({
                 link: url,
                 type: 'password-reset',
                 userName: user.name
             });
            
-           await resend.emails.send({
+           /*await resend.emails.send({
                 from: 'noreply@transanctional.optioo.io',
                 to: user.email,
                 subject: 'Reset your password',
                 html: html,
                 text: `Hello ${user.name}, We received a request to reset your password. Please visit this link to reset your password: ${url}`,
-            });
+            });*/
         }
     },
     trustedOrigins: ['http://localhost:5173'],
@@ -60,11 +64,6 @@ export const auth =  betterAuth({
 
         }
     },
-    pages: {
-        resetPassword: {
-            redirectTo: "http://localhost:5173/reset-password"
-        }
-    }
 });
  
 

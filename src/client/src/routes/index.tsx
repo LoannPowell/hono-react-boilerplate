@@ -13,7 +13,7 @@ const handleResetPassword = async (e: React.FormEvent<HTMLFormElement>) => {
   const email = (e.target as HTMLFormElement).email.value;
   await forgetPassword({
     email: email,
-    redirectTo: '/reset-password',
+    redirectTo: 'http://localhost:5173/reset-password',
   })
 }
 

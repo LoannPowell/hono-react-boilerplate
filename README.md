@@ -15,7 +15,7 @@ This is a full-stack monolith built using:
 ## 🛠️ Install Dependencies
 
 ```sh
-bun install && cd src/frontend && bun install
+bun install && cd src/client && bun install
 ```
 
 ## 🚀 Run Locally (Development)

@@ -16,7 +16,7 @@ function RouteComponent() {
     e.preventDefault();
     setError("");   
     setLoading(true);
-    
+    console.log(token);
     const formData = new FormData(e.currentTarget);
     const password = formData.get("password") as string;
     const confirmPassword = formData.get("confirmPassword") as string;
