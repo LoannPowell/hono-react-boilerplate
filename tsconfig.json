@@ -2,6 +2,19 @@
   "compilerOptions": {
     "strict": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
-  }
+    "jsxImportSource": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@optioo/config": ["./packages/config"],
+      "@optioo/database": ["./packages/database"],
+      "@optioo/shared": ["./packages/shared"]
+    }
+  },
+  "references": [
+    { "path": "./packages/config" },
+    { "path": "./packages/database" },
+    { "path": "./packages/shared" },
+    { "path": "./apps/web" },
+    { "path": "./apps/api" }
+  ]
 }

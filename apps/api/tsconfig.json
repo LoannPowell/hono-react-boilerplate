@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "strict": true,
+    "composite": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@optioo/config": ["../../packages/config"],
+      "@optioo/database": ["../../packages/database"],
+      "@optioo/shared": ["../../packages/shared"]
+    }
+  },
+  "include": ["**/*.ts", "../../packages/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
