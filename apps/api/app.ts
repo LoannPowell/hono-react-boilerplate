@@ -27,10 +27,9 @@ const apiRoutes = app
   .route('/ai', aiRoutes)
   .route('/auth', authRoutes)
 
-app.use('/assets/*', serveStatic({ root: '/app/apps/api/frontend/dist' }))
-app.get('/', serveStatic({ path: '/app/apps/api/frontend/dist/index.html' }))
-app.get('*', serveStatic({ path: '/app/apps/api/frontend/dist/index.html' }))
+app.use('/assets/*', serveStatic({ root: '/app/_static' }))
+app.get('/', serveStatic({ path: '/app/_static/index.html' }))
+app.get('*', async (c) => c.html(await Bun.file('/app/_static/index.html').text()))
 
 export default app
 export type ApiRoutes = typeof apiRoutes
-

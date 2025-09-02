@@ -8,9 +8,11 @@ declare module "hono" {
   }
 }
 
+const port = Number(process.env.PORT ?? 3000)
+
 const server = Bun.serve({
   fetch: app.fetch,
-  port: 3000,
+  port: port,
   hostname: "0.0.0.0",
 });
 

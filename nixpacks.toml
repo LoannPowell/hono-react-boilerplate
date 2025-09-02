@@ -8,18 +8,13 @@ cmds = ["bun install"]
 [phases.build]
 cmds = [
   "bun run build --filter=@optioo/web",
-  "mkdir -p apps/api/frontend/dist",
-  "cp -r apps/web/dist/* apps/api/frontend/dist/",
+  "mkdir -p /app/_static",
+  "cp -r apps/web/dist/* /app/_static/",
   "cd apps/api && bun build index.ts --compile --outfile=prod-server",
   "mv apps/api/prod-server /app/prod-server",
-  "chmod +x /app/prod-server"
-]
-
-[phases.postBuild]
-cmds = [
-  "mkdir -p /app/apps/api/frontend/dist",
-  "cp -r /app/apps/web/dist/* /app/apps/api/frontend/dist/ || true",
-  "ls -la /app/apps/api/frontend/dist || true"
+  "chmod +x /app/prod-server",
+  "ls -la /app/_static || true",
+  "ls -la /app/prod-server || true"
 ]
 
 [start]
