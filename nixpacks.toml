@@ -1,0 +1,20 @@
+# Nixpacks configuration for Coolify deployment
+[phases.setup]
+nixPkgs = ["nodejs", "bun"]
+
+[phases.install]
+cmds = ["bun install"]
+
+[phases.build]
+cmds = [
+  "bun run build --filter=@optioo/web",
+  "cp -r apps/web/dist apps/api/public",
+  "cd apps/api && bun build index.ts --compile --outfile=optioo-server"
+]
+
+[start]
+cmd = "./optioo-server"
+
+[variables]
+NODE_ENV = "production"
+PORT = "8000"
