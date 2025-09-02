@@ -1,6 +1,8 @@
 # Nixpacks configuration for Coolify deployment
 [phases.setup]
 nixPkgs = ["nodejs", "bun"]
+nixpkgsArchive = '0e0a18f576aa37127085f19e87dd19263f7eba9a'
+
 
 [phases.install]
 cmds = ["bun install"]
@@ -10,11 +12,11 @@ cmds = [
   "bun run build --filter=@optioo/web",
   "mkdir -p apps/api/frontend/dist",
   "cp -r apps/web/dist/* apps/api/frontend/dist/",
-  "cd apps/api && bun build index.ts --compile --outfile=prod-server && mv prod-server ../prod-server --minify"
+  "cd apps/api && bun build index.ts --sourcemap --compile --minify --outfile=prod-server && mv prod-server ../prod-server "
 ]
 
 [start]
-cmd = "./prod-server"
+cmd = "bun ./prod-server"
 
 [variables]
 NODE_ENV = "production"
