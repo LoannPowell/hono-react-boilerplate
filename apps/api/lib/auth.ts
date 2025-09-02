@@ -1,5 +1,5 @@
-import { env } from '@optioo/config';
-import { account, session, user, verification } from '@optioo/database/schema';
+import { env } from '@your-org/config';
+import { account, session, user, verification } from '@your-org/database/schema';
 import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { db } from '../db';
@@ -33,7 +33,7 @@ export const auth = betterAuth({
       });
 
       await resend.emails.send({
-        from: 'noreply@transanctional.optioo.io',
+        from: 'noreply@your-domain.com',
         to: user.email,
         subject: 'Reset your password',
         html: html,
@@ -59,7 +59,7 @@ export const auth = betterAuth({
       });
 
       await resend.emails.send({
-        from: 'noreply@transanctional.optioo.io',
+        from: 'noreply@your-domain.com',
         to: user.email,
         subject: 'Verify your email',
         html: html,

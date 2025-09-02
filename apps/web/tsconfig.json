@@ -6,7 +6,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@optioo/shared": ["../../packages/shared"]
+      "@your-org/shared": ["../../packages/shared"]
     }
   }
 }

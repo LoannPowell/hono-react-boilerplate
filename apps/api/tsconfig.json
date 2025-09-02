@@ -13,9 +13,9 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@optioo/config": ["../../packages/config"],
-      "@optioo/database": ["../../packages/database"],
-      "@optioo/shared": ["../../packages/shared"]
+      "@your-org/config": ["../../packages/config"],
+      "@your-org/database": ["../../packages/database"],
+      "@your-org/shared": ["../../packages/shared"]
     }
   },
   "include": ["**/*.ts", "../../packages/**/*.ts"],

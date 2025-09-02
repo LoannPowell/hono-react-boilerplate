@@ -7,7 +7,7 @@ cmds = ["bun install"]
 
 [phases.build]
 cmds = [
-  "bun run build --filter=@optioo/web",
+  "bun run build --filter=@your-org/web",
   "mkdir -p /app/_static",
   "cp -r apps/web/dist/* /app/_static/",
   "cd apps/api && bun build index.ts --compile --outfile=prod-server",

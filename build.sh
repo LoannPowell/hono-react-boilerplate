@@ -9,7 +9,7 @@ bun install
 
 # Build frontend
 echo "🎨 Building frontend..."
-bun run build --filter=@optioo/web
+bun run build --filter=@your-org/web
 
 # Copy frontend to API public directory
 echo "📁 Copying frontend to API..."
@@ -19,10 +19,10 @@ cp -r apps/web/dist/* apps/api/public/
 # Build API as executable binary
 echo "⚙️ Building API binary..."
 cd apps/api
-bun build index.ts --compile --outfile=optioo-server
+bun build index.ts --compile --outfile=prod-server
 cd ../..
 
 # Make binary executable
-chmod +x apps/api/optioo-server
+chmod +x apps/api/prod-server
 
 echo "✅ Build completed successfully!"

@@ -158,4 +158,4 @@ build/
 
 # Compiled binaries
 *.exe
-optioo-server
+prod-server
