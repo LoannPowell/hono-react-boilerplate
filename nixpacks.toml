@@ -12,11 +12,11 @@ cmds = [
   "bun run build --filter=@optioo/web",
   "mkdir -p apps/api/frontend/dist",
   "cp -r apps/web/dist/* apps/api/frontend/dist/",
-  "cd apps/api && bun build index.ts --sourcemap --compile --minify --outfile=prod-server && mv prod-server ../prod-server "
+  "cd apps/api && bun build index.ts --compile --outfile=prod-server && mv prod-server ../prod-server"
 ]
 
 [start]
-cmd = "bun ./prod-server"
+cmd = "./prod-server"
 
 [variables]
 NODE_ENV = "production"
