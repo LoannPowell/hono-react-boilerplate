@@ -12,8 +12,7 @@ cmds = [
   "bun run build --filter=@optioo/web",
   "mkdir -p apps/api/frontend/dist",
   "cp -r apps/web/dist/* apps/api/frontend/dist/",
-  "cd apps/api && bun build index.ts --compile --outfile=prod-server && mv prod-server ../prod-server && chmod +x ../prod-server && ls -la ../prod-server",
-  "ls -la prod-server"
+  "cd apps/api && bun build index.ts --compile --outfile=prod-server && mv prod-server ../prod-server && chmod +x ../prod-server && ls -la ../prod-server && cd .. && ls -la prod-server"
 ]
 
 [start]
