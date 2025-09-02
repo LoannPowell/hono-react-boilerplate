@@ -26,7 +26,7 @@ export function HeroSection({
 }: HeroSectionProps) {
   return (
     <section className="relative pt-20 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Background gradient */}
+
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/5" />
       
       <div className="relative max-w-7xl mx-auto text-center">

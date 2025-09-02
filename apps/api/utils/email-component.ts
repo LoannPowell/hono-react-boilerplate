@@ -174,5 +174,5 @@ export const generateEmailHTML = ({ link, type, userName }: EmailTemplateProps):
   `;
 };
 
-// Default export for compatibility with the existing import
+
 export default generateEmailHTML; 

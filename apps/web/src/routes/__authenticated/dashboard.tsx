@@ -10,7 +10,7 @@ export const Route = createFileRoute('/__authenticated/dashboard')({
 function Dashboard() {
   return (
     <div className="p-6 space-y-6">
-      {/* Welcome Section */}
+
       <div className="space-y-2">
         <h1 className="text-3xl font-logo text-foreground">Welcome back!</h1>
         <p className="text-muted-foreground">
@@ -18,7 +18,7 @@ function Dashboard() {
         </p>
       </div>
 
-      {/* Quick Actions */}
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card className="hover:shadow-md transition-shadow cursor-pointer">
           <CardHeader className="pb-3">
@@ -66,7 +66,7 @@ function Dashboard() {
         </Card>
       </div>
 
-      {/* Stats Overview */}
+
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -121,7 +121,7 @@ function Dashboard() {
         </Card>
       </div>
 
-      {/* Recent Activity */}
+
       <Card>
         <CardHeader>
           <CardTitle>Recent Activity</CardTitle>

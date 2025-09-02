@@ -106,7 +106,7 @@ function Register() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          {/* Social Sign Up */}
+
           <div className="space-y-3">
             <Button
               variant="outline"
@@ -137,7 +137,7 @@ function Register() {
             </div>
           </div>
 
-          {/* Email/Password Form */}
+
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="name" className="text-sm font-medium text-slate-700">

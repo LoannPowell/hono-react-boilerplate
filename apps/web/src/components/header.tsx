@@ -15,14 +15,14 @@ export function Header() {
     <header className="border-b bg-background/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Left side - Logo */}
+
           <div className="flex items-center">
               <Link to={session ? "/dashboard" : "/"}>
                 <Logo size="sm" />
               </Link>
           </div>
 
-          {/* Center - Navigation (only show when authenticated) */}
+
           {session && (
             <nav className="hidden md:flex items-center space-x-1">
               <Button variant="ghost" asChild>
@@ -51,14 +51,14 @@ export function Header() {
             </nav>
           )}
 
-          {/* Right side - Theme toggle and Auth buttons */}
+
           <div className="flex items-center space-x-2">
-            {/* Theme Toggle - Only show for authenticated users */}
+
             {session && <ModeToggle />}
 
-            {/* Auth Section */}
+
             {session ? (
-              /* Profile Dropdown */
+
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="relative h-8 w-8 rounded-full">
@@ -102,7 +102,7 @@ export function Header() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              /* Public Auth Buttons */
+
               <div className="flex items-center space-x-2">
                 <Button variant="ghost" asChild>
                   <Link to="/login">Sign In</Link>

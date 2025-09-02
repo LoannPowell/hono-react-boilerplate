@@ -95,7 +95,7 @@ function Login() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          {/* Social Sign In */}
+
           <div className="space-y-3">
             <Button
               variant="outline"
@@ -126,7 +126,7 @@ function Login() {
             </div>
           </div>
 
-          {/* Email/Password Form */}
+
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email" className="text-sm font-medium">

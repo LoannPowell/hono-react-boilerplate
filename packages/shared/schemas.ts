@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-// Shared validation schemas
+
 export const userSchema = z.object({
   id: z.string(),
   name: z.string(),

@@ -1,4 +1,4 @@
-// Shared types across the monorepo
+
 export type User = {
   id: string;
   name: string;

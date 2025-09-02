@@ -12,10 +12,6 @@ lerna-debug.log*
 
 # Caches
 
-.cache
-
-# Diagnostic reports (https://nodejs.org/api/report.html)
-
 report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # Runtime data
@@ -113,26 +109,6 @@ web_modules/
 
 .next
 out
-
-# Nuxt.js build / generate output
-
-.nuxt
-dist
-
-# Gatsby files
-
-# Comment in the public line in if your project uses Gatsby and not Next.js
-
-# https://nextjs.org/blog/next-9-1#public-directory-support
-
-# public
-
-# vuepress build output
-
-.vuepress/dist
-
-# vuepress v2.x temp and cache directory
-
 .temp
 
 # Docusaurus cache and generated files
