@@ -31,19 +31,19 @@ export function Header() {
                 </Link>
               </Button>
               <Button variant="ghost" asChild>
-                <Link to="/projects">
+                <Link to="/dashboard">
                   <BarChart3 className="w-4 h-4 mr-2" />
                   Projects
                 </Link>
               </Button>
               <Button variant="ghost" asChild>
-                <Link to="/support">
+                <Link to="/dashboard">
                   <MessageSquare className="w-4 h-4 mr-2" />
                   Support
                 </Link>
               </Button>
               <Button variant="ghost" asChild>
-                <Link to="/create">
+                <Link to="/dashboard">
                   <Plus className="w-4 h-4 mr-2" />
                   Create
                 </Link>
@@ -79,13 +79,13 @@ export function Header() {
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
-                    <Link to="/profile">
+                    <Link to="/dashboard">
                       <User className="mr-2 h-4 w-4" />
                       <span>Profile</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/settings">
+                    <Link to="/dashboard">
                       <Settings className="mr-2 h-4 w-4" />
                       <span>Settings</span>
                     </Link>
@@ -105,7 +105,7 @@ export function Header() {
 
               <div className="flex items-center space-x-2">
                 <Button variant="ghost" asChild>
-                  <Link to="/login">Sign In</Link>
+                  <Link to="/login" search={{ redirect: "/dashboard" }}>Sign In</Link>
                 </Button>
                 <Button asChild>
                   <Link to="/register">Get Started</Link>
