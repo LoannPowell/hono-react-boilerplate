@@ -12,11 +12,11 @@ cmds = [
   "bun run build --filter=@optioo/web",
   "mkdir -p apps/api/frontend/dist",
   "cp -r apps/web/dist/* apps/api/frontend/dist/",
-  "cd apps/api && bun build index.ts --compile --outfile=prod-server && mv prod-server /usr/local/bin/optioo-server && chmod +x /usr/local/bin/optioo-server && ls -la /usr/local/bin/optioo-server"
+  "cd apps/api && bun build index.ts --compile --outfile=prod-server && mv prod-server /usr/local/bin/prod-server && chmod +x /usr/local/bin/prod-server && ls -la /usr/local/bin/prod-server"
 ]
 
 [start]
-cmd = "bun optioo-server"
+cmd = "bun ./prod-server"
 
 [variables]
 NODE_ENV = "production"
