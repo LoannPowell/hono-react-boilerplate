@@ -16,10 +16,12 @@
     "db:push": "turbo run db:push",
     "db:migrate": "turbo run db:migrate",
     "clean": "turbo run clean && rm -rf node_modules",
-    "start": "./optioo-server"
+    "start": "./optioo-server",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.2",
+    "husky": "^9.1.7",
     "turbo": "^2.5.6"
   },
   "packageManager": "bun@1.1.0",
