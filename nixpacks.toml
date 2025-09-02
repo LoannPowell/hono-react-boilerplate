@@ -16,7 +16,7 @@ cmds = [
 ]
 
 [start]
-cmd = "optioo-server"
+cmd = "bun optioo-server"
 
 [variables]
 NODE_ENV = "production"
