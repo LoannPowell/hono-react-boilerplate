@@ -12,8 +12,14 @@ cmds = [
   "cp -r apps/web/dist/* apps/api/frontend/dist/",
   "cd apps/api && bun build index.ts --compile --outfile=prod-server",
   "mv apps/api/prod-server /app/prod-server",
-  "chmod +x /app/prod-server",
-  "ls -la /app/prod-server || true"
+  "chmod +x /app/prod-server"
+]
+
+[phases.postBuild]
+cmds = [
+  "mkdir -p /app/apps/api/frontend/dist",
+  "cp -r /app/apps/web/dist/* /app/apps/api/frontend/dist/ || true",
+  "ls -la /app/apps/api/frontend/dist || true"
 ]
 
 [start]
@@ -22,4 +28,3 @@ cmd = "/app/prod-server"
 [variables]
 NODE_ENV = "production"
 PORT = "8000"
-
