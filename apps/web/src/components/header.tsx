@@ -1,34 +1,37 @@
-import { Button } from '@/components/ui/button'
-import { Logo } from '@/components/ui/logo'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
-import { ModeToggle } from '@/components/ui/theme-toggle'
-import { signOut, useSession } from '@/lib/auth-client'
-import { Link, useRouter } from '@tanstack/react-router'
-import { MessageSquare, Plus, BarChart3, User, Settings, LogOut } from 'lucide-react'
+import { Link, useRouter } from '@tanstack/react-router';
+import { BarChart3, LogOut, MessageSquare, Plus, Settings, User } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Logo } from '@/components/ui/logo';
+import { ModeToggle } from '@/components/ui/theme-toggle';
+import { signOut, useSession } from '@/lib/auth-client';
 
 export function Header() {
-  const { data: session } = useSession()
+  const { data: session } = useSession();
   const router = useRouter();
-  
+
   return (
     <header className="border-b bg-background/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-
           <div className="flex items-center">
-              <Link to={session ? "/dashboard" : "/"}>
-                <Logo size="sm" />
-              </Link>
+            <Link to={session ? '/dashboard' : '/'}>
+              <Logo size="sm" />
+            </Link>
           </div>
-
 
           {session && (
             <nav className="hidden md:flex items-center space-x-1">
               <Button variant="ghost" asChild>
-                <Link to="/dashboard">
-                  Home
-                </Link>
+                <Link to="/dashboard">Home</Link>
               </Button>
               <Button variant="ghost" asChild>
                 <Link to="/dashboard">
@@ -51,14 +54,10 @@ export function Header() {
             </nav>
           )}
 
-
           <div className="flex items-center space-x-2">
-
             {session && <ModeToggle />}
 
-
             {session ? (
-
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="relative h-8 w-8 rounded-full">
@@ -71,7 +70,9 @@ export function Header() {
                 <DropdownMenuContent className="w-56" align="end" forceMount>
                   <DropdownMenuLabel className="font-normal">
                     <div className="flex flex-col space-y-1">
-                      <p className="text-sm font-medium leading-none">{session.user.name || 'User'}</p>
+                      <p className="text-sm font-medium leading-none">
+                        {session.user.name || 'User'}
+                      </p>
                       <p className="text-xs leading-none text-muted-foreground">
                         {session.user.email}
                       </p>
@@ -91,21 +92,24 @@ export function Header() {
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={() =>{ 
-                    signOut().then(() => {
-                      router.navigate({ to: "/login", search: { redirect: "/dashboard" } })
-                    })
-                  }}>
+                  <DropdownMenuItem
+                    onClick={() => {
+                      signOut().then(() => {
+                        router.navigate({ to: '/login', search: { redirect: '/dashboard' } });
+                      });
+                    }}
+                  >
                     <LogOut className="mr-2 h-4 w-4" />
                     <span>Log out</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-
               <div className="flex items-center space-x-2">
                 <Button variant="ghost" asChild>
-                  <Link to="/login" search={{ redirect: "/dashboard" }}>Sign In</Link>
+                  <Link to="/login" search={{ redirect: '/dashboard' }}>
+                    Sign In
+                  </Link>
                 </Button>
                 <Button asChild>
                   <Link to="/register">Get Started</Link>
@@ -116,5 +120,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

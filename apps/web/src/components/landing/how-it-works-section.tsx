@@ -1,13 +1,13 @@
 interface Step {
-  number: string
-  title: string
-  description: string
+  number: string;
+  title: string;
+  description: string;
 }
 
 interface HowItWorksSectionProps {
-  title: string
-  subtitle: string
-  steps: Step[]
+  title: string;
+  subtitle: string;
+  steps: Step[];
 }
 
 export function HowItWorksSection({ title, subtitle, steps }: HowItWorksSectionProps) {
@@ -15,12 +15,8 @@ export function HowItWorksSection({ title, subtitle, steps }: HowItWorksSectionP
     <section className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-logo text-foreground mb-6">
-            {title}
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {subtitle}
-          </p>
+          <h2 className="text-4xl md:text-5xl font-logo text-foreground mb-6">{title}</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{subtitle}</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-12">
@@ -30,13 +26,11 @@ export function HowItWorksSection({ title, subtitle, steps }: HowItWorksSectionP
                 <span className="text-2xl font-bold text-primary-foreground">{step.number}</span>
               </div>
               <h3 className="text-2xl font-semibold mb-4">{step.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {step.description}
-              </p>
+              <p className="text-muted-foreground leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,48 +1,48 @@
-import { createFileRoute, Link, redirect } from '@tanstack/react-router'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Alert, AlertDescription } from '@/components/ui/alert'
-import { forgetPassword, getSession } from '@/lib/auth-client'
-import { useState } from 'react'
-import { Mail, ArrowLeft, CheckCircle } from 'lucide-react'
+import { createFileRoute, Link, redirect } from '@tanstack/react-router';
+import { ArrowLeft, CheckCircle, Mail } from 'lucide-react';
+import { useState } from 'react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { forgetPassword, getSession } from '@/lib/auth-client';
 
 export const Route = createFileRoute('/forgot-password')({
   beforeLoad: async () => {
-    const session = await getSession()
+    const session = await getSession();
     if (session.data) {
       throw redirect({
         to: '/dashboard',
-      })
+      });
     }
   },
   component: ForgotPassword,
-})
+});
 
 function ForgotPassword() {
-  const [email, setEmail] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [error, setError] = useState('')
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    setError('')
-    
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
+
     try {
       await forgetPassword({
         email,
         redirectTo: `${window.location.origin}/reset-password`,
-      })
-      setIsSubmitted(true)
+      });
+      setIsSubmitted(true);
     } catch (error) {
-      setError('Failed to send reset email. Please try again.')
+      setError('Failed to send reset email. Please try again.');
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   if (isSubmitted) {
     return (
@@ -60,9 +60,7 @@ function ForgotPassword() {
             <CardContent className="pt-8 pb-8">
               <div className="text-center">
                 <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-6" />
-                <h2 className="text-2xl font-semibold text-foreground mb-4">
-                  Check your email
-                </h2>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">Check your email</h2>
                 <p className="text-muted-foreground mb-6">
                   We've sent a password reset link to <strong>{email}</strong>
                 </p>
@@ -70,15 +68,17 @@ function ForgotPassword() {
                   Didn't receive the email? Check your spam folder or try again.
                 </p>
                 <div className="space-y-3">
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     onClick={() => setIsSubmitted(false)}
                     className="w-full"
                   >
                     Try different email
                   </Button>
                   <Button variant="ghost" asChild className="w-full">
-                    <Link to="/login" search={{ redirect: '/dashboard' }}>Back to login</Link>
+                    <Link to="/login" search={{ redirect: '/dashboard' }}>
+                      Back to login
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -86,7 +86,7 @@ function ForgotPassword() {
           </Card>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -105,9 +105,7 @@ function ForgotPassword() {
             <CardTitle className="text-2xl font-semibold text-foreground">
               Forgot password?
             </CardTitle>
-            <CardDescription>
-              No worries, we'll send you reset instructions.
-            </CardDescription>
+            <CardDescription>No worries, we'll send you reset instructions.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -135,24 +133,26 @@ function ForgotPassword() {
                 </Alert>
               )}
 
-              <Button 
-                type="submit" 
-                className="w-full h-11" 
-                disabled={isLoading}
-              >
+              <Button type="submit" className="w-full h-11" disabled={isLoading}>
                 {isLoading ? 'Sending...' : 'Send reset link'}
               </Button>
             </form>
 
             <div className="text-center text-sm text-slate-600">
               Remember your password?{' '}
-              <Button variant="link" asChild className="p-0 h-auto text-slate-900 hover:text-slate-700">
-                <Link to="/login" search={{ redirect: '/dashboard' }}>Sign in</Link>
+              <Button
+                variant="link"
+                asChild
+                className="p-0 h-auto text-slate-900 hover:text-slate-700"
+              >
+                <Link to="/login" search={{ redirect: '/dashboard' }}>
+                  Sign in
+                </Link>
               </Button>
             </div>
           </CardContent>
         </Card>
       </div>
     </div>
-  )
+  );
 }

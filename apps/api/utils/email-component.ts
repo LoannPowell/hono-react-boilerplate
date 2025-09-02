@@ -11,25 +11,28 @@ export const generateEmailHTML = ({ link, type, userName }: EmailTemplateProps):
         return {
           subject: 'Reset Your Password',
           title: 'Password Reset Request',
-          message: 'We received a request to reset your password. Click the button below to create a new password.',
+          message:
+            'We received a request to reset your password. Click the button below to create a new password.',
           buttonText: 'Reset Password',
-          footer: "If you didn't request this password reset, you can safely ignore this email."
+          footer: "If you didn't request this password reset, you can safely ignore this email.",
         };
       case 'email-verification':
         return {
           subject: 'Verify Your Email Address',
           title: 'Email Verification',
-          message: 'Please verify your email address by clicking the button below. This helps us keep your account secure.',
+          message:
+            'Please verify your email address by clicking the button below. This helps us keep your account secure.',
           buttonText: 'Verify Email',
-          footer: "If you didn't create an account, you can safely ignore this email."
+          footer: "If you didn't create an account, you can safely ignore this email.",
         };
       case 'welcome':
         return {
           subject: 'Welcome to App!',
           title: 'Welcome to App',
-          message: 'Thank you for joining us! We\'re excited to have you on board. Click the button below to get started.',
+          message:
+            "Thank you for joining us! We're excited to have you on board. Click the button below to get started.",
           buttonText: 'Get Started',
-          footer: "If you have any questions, feel free to reach out to our support team."
+          footer: 'If you have any questions, feel free to reach out to our support team.',
         };
       default:
         return {
@@ -37,7 +40,7 @@ export const generateEmailHTML = ({ link, type, userName }: EmailTemplateProps):
           title: 'Hello from App',
           message: 'You have received an email from App. Click the button below to continue.',
           buttonText: 'Continue',
-          footer: "If you have any questions, feel free to reach out to our support team."
+          footer: 'If you have any questions, feel free to reach out to our support team.',
         };
     }
   };
@@ -174,5 +177,4 @@ export const generateEmailHTML = ({ link, type, userName }: EmailTemplateProps):
   `;
 };
 
-
-export default generateEmailHTML; 
+export default generateEmailHTML;

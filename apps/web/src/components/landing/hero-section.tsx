@@ -1,17 +1,17 @@
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { ArrowRight, CheckCircle, Zap } from 'lucide-react'
-import { Link } from '@tanstack/react-router'
+import { Link } from '@tanstack/react-router';
+import { ArrowRight, CheckCircle, Zap } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 interface HeroSectionProps {
-  title: string
-  subtitle: string
-  description: string
-  primaryButtonText: string
-  primaryButtonLink: string
-  secondaryButtonLink: string
-  badgeText: string
-  features: string[]
+  title: string;
+  subtitle: string;
+  description: string;
+  primaryButtonText: string;
+  primaryButtonLink: string;
+  secondaryButtonLink: string;
+  badgeText: string;
+  features: string[];
 }
 
 export function HeroSection({
@@ -22,13 +22,12 @@ export function HeroSection({
   primaryButtonLink,
   secondaryButtonLink,
   badgeText,
-  features
+  features,
 }: HeroSectionProps) {
   return (
     <section className="relative pt-20 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/5" />
-      
+
       <div className="relative max-w-7xl mx-auto text-center">
         <Badge variant="secondary" className="mb-8 text-sm px-4 py-2">
           <Zap className="w-4 h-4 mr-2" />
@@ -36,9 +35,7 @@ export function HeroSection({
         </Badge>
 
         <h1 className="text-6xl md:text-7xl lg:text-8xl font-logo tracking-tight mb-8 leading-tight">
-          <span className="text-foreground">
-            {title}
-          </span>
+          <span className="text-foreground">{title}</span>
           <br />
           <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
             {subtitle}
@@ -71,5 +68,5 @@ export function HeroSection({
         </div>
       </div>
     </section>
-  )
+  );
 }

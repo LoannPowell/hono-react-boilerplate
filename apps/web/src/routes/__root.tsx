@@ -1,5 +1,5 @@
-import { createRootRoute, Outlet } from '@tanstack/react-router'
-import { Header } from '@/components/header'
+import { createRootRoute, Outlet } from '@tanstack/react-router';
+import { Header } from '@/components/header';
 
 export const Route = createRootRoute({
   component: () => (
@@ -10,4 +10,4 @@ export const Route = createRootRoute({
       </main>
     </div>
   ),
-})
+});

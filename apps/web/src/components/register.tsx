@@ -1,37 +1,41 @@
-import React, { useState } from "react";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
-import { signUp } from "../lib/auth-client";
-import { redirect } from "@tanstack/react-router";
+import { redirect } from '@tanstack/react-router';
+import type React from 'react';
+import { useState } from 'react';
+import type { signUp } from '../lib/auth-client';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
 
 interface RegisterProps {
   onRegister: typeof signUp;
 }
 
 const Register: React.FC<RegisterProps> = ({ onRegister }) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError("");
-    await onRegister.email({
-          email,
-          password,
-          name,
-          roles: ["user"],
-        }, {
-            onSuccess: () => {
-                redirect({ to: "/" });
-            },
-            onError: (error) => {
-                setError(error.error.message);
-            },
-    })
+    setError('');
+    await onRegister.email(
+      {
+        email,
+        password,
+        name,
+        roles: ['user'],
+      },
+      {
+        onSuccess: () => {
+          redirect({ to: '/' });
+        },
+        onError: (error) => {
+          setError(error.error.message);
+        },
+      }
+    );
     setLoading(false);
   };
 
@@ -42,29 +46,29 @@ const Register: React.FC<RegisterProps> = ({ onRegister }) => {
         type="text"
         placeholder="Name"
         value={name}
-        onChange={e => setName(e.target.value)}
+        onChange={(e) => setName(e.target.value)}
         required
       />
       <Input
         type="email"
         placeholder="Email"
         value={email}
-        onChange={e => setEmail(e.target.value)}
+        onChange={(e) => setEmail(e.target.value)}
         required
       />
       <Input
         type="password"
         placeholder="Password"
         value={password}
-        onChange={e => setPassword(e.target.value)}
+        onChange={(e) => setPassword(e.target.value)}
         required
       />
       {error && <div className="text-red-500 text-sm">{error}</div>}
       <Button type="submit" disabled={loading} className="w-full">
-        {loading ? "Registering..." : "Register"}
+        {loading ? 'Registering...' : 'Register'}
       </Button>
     </form>
   );
 };
 
-export default Register; 
+export default Register;

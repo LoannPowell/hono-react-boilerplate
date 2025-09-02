@@ -1,23 +1,19 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Plus, MessageSquare, BarChart3, TrendingUp, Users, Zap } from 'lucide-react'
+import { createFileRoute } from '@tanstack/react-router';
+import { BarChart3, MessageSquare, Plus, TrendingUp, Users, Zap } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const Route = createFileRoute('/__authenticated/dashboard')({
   component: Dashboard,
-})
+});
 
 function Dashboard() {
   return (
     <div className="p-6 space-y-6">
-
       <div className="space-y-2">
         <h1 className="text-3xl font-logo text-foreground">Welcome back!</h1>
-        <p className="text-muted-foreground">
-          Here's what's happening with your projects today.
-        </p>
+        <p className="text-muted-foreground">Here's what's happening with your projects today.</p>
       </div>
-
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card className="hover:shadow-md transition-shadow cursor-pointer">
@@ -29,9 +25,7 @@ function Dashboard() {
               <Badge variant="secondary">New</Badge>
             </div>
             <CardTitle className="text-lg">Create Project</CardTitle>
-            <CardDescription>
-              Start a new project from scratch
-            </CardDescription>
+            <CardDescription>Start a new project from scratch</CardDescription>
           </CardHeader>
         </Card>
 
@@ -44,9 +38,7 @@ function Dashboard() {
               <Badge variant="outline">Active</Badge>
             </div>
             <CardTitle className="text-lg">Support Chat</CardTitle>
-            <CardDescription>
-              Get help from our support team
-            </CardDescription>
+            <CardDescription>Get help from our support team</CardDescription>
           </CardHeader>
         </Card>
 
@@ -59,13 +51,10 @@ function Dashboard() {
               <Badge variant="outline">View All</Badge>
             </div>
             <CardTitle className="text-lg">My Projects</CardTitle>
-            <CardDescription>
-              Review and manage your projects
-            </CardDescription>
+            <CardDescription>Review and manage your projects</CardDescription>
           </CardHeader>
         </Card>
       </div>
-
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card>
@@ -75,9 +64,7 @@ function Dashboard() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">12</div>
-            <p className="text-xs text-muted-foreground">
-              +2 from last month
-            </p>
+            <p className="text-xs text-muted-foreground">+2 from last month</p>
           </CardContent>
         </Card>
 
@@ -88,9 +75,7 @@ function Dashboard() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">3</div>
-            <p className="text-xs text-muted-foreground">
-              In progress
-            </p>
+            <p className="text-xs text-muted-foreground">In progress</p>
           </CardContent>
         </Card>
 
@@ -101,9 +86,7 @@ function Dashboard() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">9</div>
-            <p className="text-xs text-muted-foreground">
-              +1 this week
-            </p>
+            <p className="text-xs text-muted-foreground">+1 this week</p>
           </CardContent>
         </Card>
 
@@ -114,20 +97,15 @@ function Dashboard() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">85%</div>
-            <p className="text-xs text-muted-foreground">
-              +5% from last month
-            </p>
+            <p className="text-xs text-muted-foreground">+5% from last month</p>
           </CardContent>
         </Card>
       </div>
 
-
       <Card>
         <CardHeader>
           <CardTitle>Recent Activity</CardTitle>
-          <CardDescription>
-            Your latest project activities
-          </CardDescription>
+          <CardDescription>Your latest project activities</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -141,7 +119,7 @@ function Dashboard() {
               </div>
               <Badge variant="secondary">Completed</Badge>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               <div className="p-2 bg-blue-500/10 rounded-lg">
                 <MessageSquare className="h-4 w-4 text-blue-500" />
@@ -152,7 +130,7 @@ function Dashboard() {
               </div>
               <Badge variant="outline">Active</Badge>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               <div className="p-2 bg-primary/10 rounded-lg">
                 <Plus className="h-4 w-4 text-primary" />
@@ -167,5 +145,5 @@ function Dashboard() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }

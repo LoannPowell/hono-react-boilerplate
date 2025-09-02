@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod';
 
 export const envSchema = z.object({
   DATABASE_URL: z.string().url(),
@@ -8,4 +8,4 @@ export const envSchema = z.object({
   RESEND_API_KEY: z.string().min(1),
 });
 
-export const env = envSchema.parse(process.env); 
+export const env = envSchema.parse(process.env);

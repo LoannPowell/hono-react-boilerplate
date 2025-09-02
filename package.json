@@ -8,7 +8,9 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
     "type-check": "turbo run type-check",
     "db:generate": "turbo run db:generate",
     "db:push": "turbo run db:push",
@@ -17,6 +19,7 @@
     "start": "./optioo-server"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.2.2",
     "turbo": "^2.5.6"
   },
   "packageManager": "bun@1.1.0",

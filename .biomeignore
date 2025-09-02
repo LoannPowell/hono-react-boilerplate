@@ -1,0 +1,7 @@
+node_modules/
+dist/
+build/
+.turbo/
+*.d.ts
+routeTree.gen.ts
+drizzle/
