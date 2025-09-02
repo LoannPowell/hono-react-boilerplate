@@ -10,7 +10,7 @@ cmds = [
   "bun run build --filter=@your-org/web",
   "mkdir -p /app/_static",
   "cp -r apps/web/dist/* /app/_static/",
-  "cd apps/api && bun build index.ts --compile --outfile=prod-server",
+  "cd apps/api && bun build index.ts --compile --minify --sourcemap --outfile=prod-server",
   "mv apps/api/prod-server /app/prod-server",
   "chmod +x /app/prod-server",
   "ls -la /app/_static || true",
