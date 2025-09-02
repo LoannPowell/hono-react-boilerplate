@@ -1,5 +1,5 @@
 {
-  "name": "optioo",
+  "name": "modern-fullstack-monorepo",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -16,7 +16,7 @@
     "db:push": "turbo run db:push",
     "db:migrate": "turbo run db:migrate",
     "clean": "turbo run clean && rm -rf node_modules",
-    "start": "./optioo-server",
+    "start": "./prod-server",
     "prepare": "husky"
   },
   "devDependencies": {

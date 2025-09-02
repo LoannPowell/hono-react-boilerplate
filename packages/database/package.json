@@ -1,5 +1,5 @@
 {
-  "name": "@optioo/database",
+  "name": "@your-org/database",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,7 +14,7 @@
     "db:migrate": "drizzle-kit migrate"
   },
   "dependencies": {
-    "@optioo/config": "workspace:*",
+    "@your-org/config": "workspace:*",
     "drizzle-orm": "^0.44.3",
     "pg": "^8.16.3"
   },
