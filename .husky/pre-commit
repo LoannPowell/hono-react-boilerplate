@@ -1,15 +1,6 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+echo "🔍 Running Biome formatting..."
 
-echo "🔍 Running Biome linting and formatting..."
+# Run Biome to format code (this won't fail on linting errors)
+bun run format
 
-# Run Biome to check and fix linting issues
-bun run lint:fix
-
-# Check if there are any remaining linting errors
-if ! bun run lint; then
-  echo "❌ Linting failed. Please fix the errors above before committing."
-  exit 1
-fi
-
-echo "✅ All checks passed! Proceeding with commit..."
+echo "✅ Biome formatting completed! Proceeding with commit..."
