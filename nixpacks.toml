@@ -1,4 +1,3 @@
-# Nixpacks configuration for Coolify deployment
 [phases.setup]
 nixPkgs = ["nodejs", "bun"]
 nixpkgsArchive = "0e0a18f576aa37127085f19e87dd19263f7eba9a"
@@ -7,26 +6,20 @@ nixpkgsArchive = "0e0a18f576aa37127085f19e87dd19263f7eba9a"
 cmds = ["bun install"]
 
 [phases.build]
-# Construye web y compila el server; deja el binario en /app
 cmds = [
   "bun run build --filter=@optioo/web",
   "mkdir -p apps/api/frontend/dist",
   "cp -r apps/web/dist/* apps/api/frontend/dist/",
   "cd apps/api && bun build index.ts --compile --outfile=prod-server",
-  # mueve el binario a /app en la MISMA capa de build
   "mv apps/api/prod-server /app/prod-server",
   "chmod +x /app/prod-server",
   "ls -la /app/prod-server || true"
 ]
 
-# Evita pasos postBuild para que ninguna COPY posterior lo pise
-# [phases.postBuild]
-# cmds = []
-
 [start]
-# Usa ruta ABSOLUTA para evitar problemas de WORKDIR
 cmd = "/app/prod-server"
 
 [variables]
 NODE_ENV = "production"
 PORT = "8000"
+
